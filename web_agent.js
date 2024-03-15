@@ -135,11 +135,12 @@ async function waitForEvent(page, event) {
     console.log( "# GPT4V-Browsing by Unconventional Coding #" );
     console.log( "###########################################\n" );
 
-    const browser = await puppeteer.launch( {
+    const browser = await puppeteer.launch({
         headless: "false",
-        executablePath: '/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary',
-        userDataDir: '/Users/jasonzhou/Library/Application\ Support/Google/Chrome\ Canary/Default',
-    } );
+        executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser', // Change this path to your Brave Browser executable path
+        userDataDir: '/Users/kisharora/Library/Application Support/BraveSoftware/Brave-Browser/Default', // Update with your actual username
+    });
+    
 
     const page = await browser.newPage();
 
@@ -224,7 +225,7 @@ async function waitForEvent(page, event) {
 
         const response = await openai.chat.completions.create({
             model: "gpt-4-vision-preview",
-            max_tokens: 1024,
+            max_tokens: 124,
             messages: messages,
         });
 

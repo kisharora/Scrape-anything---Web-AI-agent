@@ -58,7 +58,7 @@ def visionExtract(b64_image, prompt):
                 ]
             }
         ],
-        max_tokens=1024,
+        max_tokens=124,
     )
 
     message = response.choices[0].message
@@ -81,5 +81,5 @@ def visionCrawl(url, prompt):
     else:
         return visionExtract(b64_image, prompt)
 
-response = visionCrawl("https://relevanceai.com/pricing", "Extract the pricing info")
+response = visionCrawl("Extract the pricing info for netflix for all countries and write it on a google doc and give me the link")
 print(response)
